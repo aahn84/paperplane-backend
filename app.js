@@ -13,10 +13,16 @@ app.disable('x-powered-by')
 app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
+// app.use(bodyParser.json({ limit: ‘50mb’ }));
 
-// const router = require('./routes/routes.js')
-// app.use(router)
+const routes = require('./routes');
 
+
+// app.use('/auth', routes.auth);
+app.use('/users', routes.users);
+app.use('/api/flights', routes.flights);
+// app.use('/api/carts', routes.carts);
+// app.use('/api/reviews', routes.reviews);
 
 
 app.use((err, req, res, next) => {
