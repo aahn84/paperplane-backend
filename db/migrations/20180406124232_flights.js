@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     table.string('depart_airport').notNullable();
     table.string('depart_date').notNullable();
     table.string('depart_time')
-    table.string('depart_gmt').notNullable();
+    table.string('depart_gmt')
     table.string('depart_terminal').defaultTo('Not Assigned');
     table.string('depart_gate').defaultTo('Not Assigned');
     table.string('depart_scheduledTime').notNullable();
@@ -16,9 +16,9 @@ exports.up = function(knex, Promise) {
     table.string('depart_actualTime')
     table.string('depart_status')
     table.string('arrive_airport').notNullable();
-    table.string('arrive_date').notNullable();
+    table.string('arrive_date');
     table.string('arrive_time')
-    table.string('arrive_gmt').notNullable();
+    table.string('arrive_gmt')
     table.string('arrive_terminal').defaultTo('Not Assigned');
     table.string('arrive_gate').defaultTo('Not Assigned');
     table.string('baggage_claim').defaultTo('Not Assigned');
