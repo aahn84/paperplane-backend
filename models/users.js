@@ -1,45 +1,21 @@
 const knex = require('../db/knex');
 // const bcrypt = require('bcryptjs');
 // const jwt = require('jsonwebtoken');
-// const carts = require('./carts');
 
-// const users = [
-//   {
-//     id: 1,
-//     first_name: 'Angela',
-//     last_name: 'Ahn',
-//     email: 'aahn84@gmail.com',
-//     password: 'password',
-//     notifications: true,
-//   },
-//   {
-//     id: 2,
-//     first_name: 'Beyonce',
-//     last_name: 'Knowles',
-//     email: 'b@beyonce.com',
-//     password: 'queenbee',
-//     notifications: false,
-//   },
-// ]
 
 function getUserByEmail(email) {
   return knex('users')
     .select('*')
     .where('email', email)
-    .first();
+    .first()
 }
 
 function getUserById(id) {
   return knex('users')
     .select('*')
     .where('id', id)
-    .first();
+    .first()
 }
-
-// function getUserById(id) {
-//   console.log(users);
-//   return users.find(user => user.id === id);
-// }
 
 // function signup(user) {
 //   let validUser;

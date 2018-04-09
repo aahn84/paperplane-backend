@@ -1,6 +1,5 @@
 module.exports = {
   users: require('./users'),
+  trips: require('./trips'),
   flights: require('./flights'),
-  // carts: require('./carts'),
-  // reviews: require('./reviews'),
 };

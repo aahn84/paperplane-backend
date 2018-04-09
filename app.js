@@ -19,10 +19,9 @@ const routes = require('./routes');
 
 
 // app.use('/auth', routes.auth);
-app.use('/users', routes.users);
+app.use('/api/users', routes.users);
 app.use('/api/flights', routes.flights);
-// app.use('/api/carts', routes.carts);
-// app.use('/api/reviews', routes.reviews);
+app.use('/api/trips', routes.trips);
 
 
 app.use((err, req, res, next) => {
