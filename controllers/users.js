@@ -29,6 +29,16 @@ const model = require('../models');
 //         });
 // }
 
+function getAllUsers(req, res, next) {
+  return model.users.getAllUsers()
+    .then(users => {
+      return res.status(200).json({ data: users });
+    })
+    .catch(err => {
+    return next({ status: 404, message: `Not found` });
+  })
+}
+
 function getUserById(req, res, next) {
   return model.users.getUserById(req.params.id)
     .then(user => {
@@ -42,5 +52,6 @@ function getUserById(req, res, next) {
 module.exports = {
   // signup,
   // login,
+  getAllUsers,
   getUserById,
 };

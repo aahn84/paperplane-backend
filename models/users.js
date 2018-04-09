@@ -3,6 +3,11 @@ const knex = require('../db/knex');
 // const jwt = require('jsonwebtoken');
 
 
+function getAllUsers() {
+  return knex('users')
+    .select('*')
+}
+
 function getUserByEmail(email) {
   return knex('users')
     .select('*')
@@ -66,5 +71,6 @@ function getUserById(id) {
 module.exports = {
   // signup,
   // login,
+  getAllUsers,
   getUserById,
 };
