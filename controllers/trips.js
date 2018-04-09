@@ -31,6 +31,18 @@ function createTrip(req, res, next) {
   })
 }
 
+function updateTrip(req, res, next) {
+  const id = req.params.id;
+  const { title, notes } = req.body;
+  return model.trips.updateTrip(id, title, notes)
+    .then(trip => {
+      return res.status(201).json({ data: trip });
+    })
+    .catch(err => {
+    return next({ status: 404, message: `Error updating trip.` });
+  })
+}
+
 function deleteTrip(req, res, next) {
   return model.trips.deleteTrip(req.params.id)
     .then(trip => {
@@ -46,5 +58,6 @@ module.exports = {
   getAllTrips,
   getTripById,
   createTrip,
+  updateTrip,
   deleteTrip,
 };

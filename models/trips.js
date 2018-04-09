@@ -21,6 +21,13 @@ function createTrip(user_id, title, notes) {
     .returning('*')
 }
 
+function updateTrip(id, title, notes) {
+  return knex('trips')
+    .update({title, notes})
+    .where('id', id)
+    .returning('*')
+}
+
 function deleteTrip(id) {
   return knex('trips')
   .del()
@@ -32,5 +39,6 @@ module.exports = {
   getAllTrips,
   getTripById,
   createTrip,
+  updateTrip,
   deleteTrip,
 };
