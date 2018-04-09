@@ -10,6 +10,13 @@ function getTripById(id) {
     .first()
 }
 
+function createTrip(user_id, title, notes) {
+  return knex('trips')
+    .insert({user_id, title, notes})
+    .returning('*')
+}
+
 module.exports = {
   getTripById,
+  createTrip,
 };

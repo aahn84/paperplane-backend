@@ -10,6 +10,18 @@ function getTripById(req, res, next) {
   })
 }
 
+function createTrip(req, res, next) {
+  const { user_id, title, notes } = req.body;
+  return model.trips.createTrip(user_id, title, notes)
+    .then(trip => {
+      return res.status(201).json({ data: trip });
+    })
+    .catch(err => {
+    return next({ status: 404, message: `Error creating trip.` });
+  })
+}
+
 module.exports = {
   getTripById,
+  createTrip,
 };
