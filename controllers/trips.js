@@ -1,5 +1,15 @@
 const model = require('../models');
 
+function getAllTrips(req, res, next) {
+  return model.trips.getAllTrips()
+    .then(trips => {
+      return res.status(200).json({ data: trips });
+    })
+    .catch(err => {
+    return next({ status: 404, message: `Not found` });
+  })
+}
+
 function getTripById(req, res, next) {
   return model.trips.getTripById(req.params.id)
     .then(trip => {
@@ -21,7 +31,20 @@ function createTrip(req, res, next) {
   })
 }
 
+function deleteTrip(req, res, next) {
+  return model.trips.deleteTrip(req.params.id)
+    .then(trip => {
+      return res.status(200).json({ data: trip });
+    })
+    .catch(err => {
+    return next({ status: 404, message: `Error deleting trip.` });
+  })
+}
+
+
 module.exports = {
+  getAllTrips,
   getTripById,
   createTrip,
+  deleteTrip,
 };
