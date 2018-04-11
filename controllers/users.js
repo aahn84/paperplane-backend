@@ -40,9 +40,32 @@ function getAllUsers(req, res, next) {
 }
 
 function getUserById(req, res, next) {
+  // const id = req.body;
   return model.users.getUserById(req.params.id)
     .then(user => {
       return res.status(200).json({ data: user });
+    })
+    .catch(err => {
+    return next({ status: 404, message: `User not found` });
+  })
+}
+
+function createUser(req, res, next) {
+  const { first_name, last_name, email, password } = req.body;
+  return model.users.createUser(user_id, title, notes)
+    .then(user => {
+      return res.status(201).json({ data: user });
+    })
+    .catch(err => {
+    return next({ status: 404, message: `Error creating user.` });
+  })
+}
+
+function updateUserById(req, res, next) {
+  const { user_id, first_name, last_name, email, password, notifications_on } = req.body
+  return model.users.getUserById(user_id, first_name, last_name, email, password, notifications_on)
+    .then(user => {
+      return res.status(201).json({ data: user });
     })
     .catch(err => {
     return next({ status: 404, message: `User not found` });
@@ -54,4 +77,6 @@ module.exports = {
   // login,
   getAllUsers,
   getUserById,
+  createUser,
+  updateUserById,
 };

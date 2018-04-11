@@ -8,18 +8,24 @@ function getAllUsers() {
     .select('*')
 }
 
-function getUserByEmail(email) {
-  return knex('users')
-    .select('*')
-    .where('email', email)
-    .first()
-}
-
 function getUserById(id) {
   return knex('users')
     .select('*')
     .where('id', id)
     .first()
+}
+
+function createUser(first_name, last_name, email, password) {
+  return knex('users')
+    .insert({first_name, last_name, email, password})
+    .returning('*')
+}
+
+function updateUserById(user_id, first_name, last_name, email, password, notifications_on) {
+  return knex('users')
+    .update({user_id, first_name, last_name, email, password, notifications_on})
+    .where('id', user_id)
+    .returning('*')
 }
 
 // function signup(user) {
@@ -73,4 +79,6 @@ module.exports = {
   // login,
   getAllUsers,
   getUserById,
+  createUser,
+  updateUserById,
 };
