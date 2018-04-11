@@ -15,6 +15,34 @@ function getUserById(id) {
     .first()
 }
 
+function getTripsByUserId(id) {
+  return knex('trips')
+    .where('user_id', id)
+    .then(trips => {
+      const promises = trips.map(trip => {
+        return knex('flights')
+          .join('trips_flights', 'trips_flights.flights_id', 'flights.id')
+          .where('trips_flights.trips_id', trip.id)
+          .orderBy('depart_scheduledTime', 'asc')
+          .then(flights => {
+            trip.flights = flights
+            return trip;
+          })
+      })
+      return Promise.all(promises)
+        .then(trips => {
+          return trips.sort((tripA, tripB) => {
+            return tripA.flights[0].depart_scheduledTime < tripB.flights[0].depart_scheduledTime
+          })
+        })
+    })
+
+    // .innerJoin('trips_flights', 'trips.id', 'trips_flights.trips_id')
+    // .innerJoin('flights', 'flights.id', 'trips_flights.flights_id')
+    // .orderBy('depart_scheduledTime', 'asc')
+    // .returning('*')
+}
+
 function createUser(first_name, last_name, email, password) {
   return knex('users')
     .insert({first_name, last_name, email, password})
@@ -79,6 +107,7 @@ module.exports = {
   // login,
   getAllUsers,
   getUserById,
+  getTripsByUserId,
   createUser,
   updateUserById,
 };

@@ -1,6 +1,5 @@
 module.exports = [
   {
-    id: 1,
     airline_callsign: "ALASKA",
     airline_iata: "AS",
     flight_num: "510",
@@ -34,7 +33,6 @@ module.exports = [
     updated: 1523163923,
   },
   {
-    id: 2,
     airline_callsign : "HAWAIIAN",
     airline_iata: "HA",
     flight_num: "529",
@@ -69,7 +67,6 @@ module.exports = [
     updated: 1523163915,
   },
   {
-    id: 3,
     airline_callsign: "ALASKA",
     airline_iata: "AS",
     flight_num: "83",

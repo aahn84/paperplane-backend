@@ -15,16 +15,16 @@ function getAllTrips() {
 //     .first()
 // }
 
-function getTripsByUserId(id) {
-  // let trips;
-  return knex('trips')
-    // .select('*')
-    .where('user_id', id)
-    .join('trips_flights', 'trips.id', '=', 'trips_flights.trips_id')
-    .join('flights', 'flights.id', '=', 'trips_flights.flights_id')
-    .orderBy('depart_scheduledTime', 'asc')
-    .returning('*')
-}
+// function getTripsByUserId(id) {
+//   // let trips;
+//   return knex('trips')
+//     // .select('*')
+//     .where('user_id', id)
+//     .join('trips_flights', 'trips.id', '=', 'trips_flights.trips_id')
+//     .join('flights', 'flights.id', '=', 'trips_flights.flights_id')
+//     .orderBy('depart_scheduledTime', 'asc')
+//     .returning('*')
+// }
 
 function createTrip(user_id, title, notes) {
   return knex('trips')
@@ -49,7 +49,7 @@ function deleteTrip(id) {
 module.exports = {
   getAllTrips,
   // getTripByTripId,
-  getTripsByUserId,
+  // getTripsByUserId,
   createTrip,
   updateTrip,
   deleteTrip,

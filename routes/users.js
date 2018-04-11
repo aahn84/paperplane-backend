@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/', controller.users.getAllUsers);
 router.get('/:id', controller.users.getUserById);
+router.get('/:id/trips', controller.users.getTripsByUserId);
 router.post('/', controller.users.createUser);
 // router.post('/', controller.users.login);
 // router.post('/signup', controller.users.signup);

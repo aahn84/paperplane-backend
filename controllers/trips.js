@@ -20,15 +20,15 @@ function getAllTrips(req, res, next) {
 //   })
 // }
 
-function getTripsByUserId(req, res, next) {
-  return model.trips.getTripsByUserId(req.params.id)
-    .then(trips => {
-      return res.status(200).json({ data: trips });
-    })
-    .catch(err => {
-    return next({ status: 404, message: `Trips not found` });
-  })
-}
+// function getTripsByUserId(req, res, next) {
+//   return model.trips.getTripsByUserId(req.params.id)
+//     .then(trips => {
+//       return res.status(200).json({ data: trips });
+//     })
+//     .catch(err => {
+//     return next({ status: 404, message: `Trips not found` });
+//   })
+// }
 
 function createTrip(req, res, next) {
   const { user_id, title, notes } = req.body;
@@ -49,17 +49,18 @@ function updateTrip(req, res, next) {
       return res.status(201).json({ data: trip });
     })
     .catch(err => {
-    return next({ status: 404, message: `Error updating trip.` });
+    return next({ status: 404, message: `Error updating trip ${id}.` });
   })
 }
 
 function deleteTrip(req, res, next) {
-  return model.trips.deleteTrip(req.params.id)
+  const id = req.params.id
+  return model.trips.deleteTrip(id)
     .then(trip => {
       return res.status(200).json({ data: trip });
     })
     .catch(err => {
-    return next({ status: 404, message: `Error deleting trip.` });
+    return next({ status: 404, message: `Error deleting trip ${id}.` });
   })
 }
 
@@ -67,7 +68,7 @@ function deleteTrip(req, res, next) {
 module.exports = {
   getAllTrips,
   // getTripByTripId,
-  getTripsByUserId,
+  // getTripsByUserId,
   createTrip,
   updateTrip,
   deleteTrip,

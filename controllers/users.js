@@ -50,6 +50,16 @@ function getUserById(req, res, next) {
   })
 }
 
+function getTripsByUserId(req, res, next) {
+  return model.users.getTripsByUserId(req.params.id)
+    .then(trips => {
+      return res.status(200).json({ data: trips });
+    })
+    .catch(err => {
+    return next({ status: 404, message: `Trips not found` });
+  })
+}
+
 function createUser(req, res, next) {
   const { first_name, last_name, email, password } = req.body;
   return model.users.createUser(user_id, title, notes)
@@ -77,6 +87,7 @@ module.exports = {
   // login,
   getAllUsers,
   getUserById,
+  getTripsByUserId,
   createUser,
   updateUserById,
 };
