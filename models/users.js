@@ -36,11 +36,6 @@ function getTripsByUserId(id) {
           })
         })
     })
-
-    // .innerJoin('trips_flights', 'trips.id', 'trips_flights.trips_id')
-    // .innerJoin('flights', 'flights.id', 'trips_flights.flights_id')
-    // .orderBy('depart_scheduledTime', 'asc')
-    // .returning('*')
 }
 
 function createUser(first_name, last_name, email, password) {

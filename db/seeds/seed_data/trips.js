@@ -1,12 +1,12 @@
 module.exports=[
   {
     user_id: 1,
-    title: "My Trip",
-    notes: null,
+    title: "Disneyland!",
+    notes: "The most magical place on earth.",
   },
   {
     user_id: 1,
-    title: "Fun Times!",
+    title: "Fun Times",
     notes: "Find places to eat.",
   },
   {
