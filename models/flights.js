@@ -2,7 +2,19 @@ const knex = require('../db/knex');
 const axios = require('axios');
 const BASE_URL = 'https://aviation-edge.com/api/public'
 
-function getFlight(airline_name, flight_num, depart_date, trip_id) {
+function getAllFlights() {
+  return knex('flights')
+    .select('*')
+}
+
+function getFlightById(id) {
+  return knex('flights')
+    .select('*')
+    .where('id', id)
+    .first()
+}
+
+function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
   let airline;
   let route;
 
@@ -62,7 +74,6 @@ function getFlight(airline_name, flight_num, depart_date, trip_id) {
 
 }
 
-
 function getAirlineByName(airline_name)  {
   return axios.get(`${BASE_URL}/airlineDatabase?key=${process.env.API_KEY}&codeIso2Country=US`)
     .then(result => {
@@ -77,5 +88,7 @@ function getAirlineByName(airline_name)  {
 module.exports = {
   // signup,
   // login,
-  getFlight,
+  getAllFlights,
+  getFlightById,
+  getFlightInfo,
 };

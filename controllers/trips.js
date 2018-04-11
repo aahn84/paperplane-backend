@@ -10,13 +10,23 @@ function getAllTrips(req, res, next) {
   })
 }
 
-function getTripById(req, res, next) {
-  return model.trips.getTripById(req.params.id)
-    .then(trip => {
-      return res.status(200).json({ data: trip });
+// function getTripByTripId(req, res, next) {
+//   return model.trips.getTripById(req.params.id)
+//     .then(trip => {
+//       return res.status(200).json({ data: trip });
+//     })
+//     .catch(err => {
+//     return next({ status: 404, message: `Trip not found` });
+//   })
+// }
+
+function getTripsByUserId(req, res, next) {
+  return model.trips.getTripsByUserId(req.params.id)
+    .then(trips => {
+      return res.status(200).json({ data: trips });
     })
     .catch(err => {
-    return next({ status: 404, message: `Trip not found` });
+    return next({ status: 404, message: `Trips not found` });
   })
 }
 
@@ -56,7 +66,8 @@ function deleteTrip(req, res, next) {
 
 module.exports = {
   getAllTrips,
-  getTripById,
+  // getTripByTripId,
+  getTripsByUserId,
   createTrip,
   updateTrip,
   deleteTrip,

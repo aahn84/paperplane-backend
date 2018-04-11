@@ -3,8 +3,8 @@ const controller = require('../controllers');
 
 const router = express.Router();
 
-// router.post('/signup', controller.users.signup);
-// router.post('/login', controller.users.login);
-router.post('/:id', controller.flights.getFlight);
+router.get('/', controller.flights.getAllFlights);
+router.get('/:id', controller.flights.getFlightById);
+router.post('/:id', controller.flights.getFlightInfo);
 
 module.exports = router;
