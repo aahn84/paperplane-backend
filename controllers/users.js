@@ -53,7 +53,6 @@ function getUserById(req, res, next) {
 function getTripsByUserId(req, res, next) {
   return model.users.getTripsByUserId(req.params.id)
     .then(trips => {
-      console.log('TRIPS', trips);
       return res.status(200).json({ data: trips });
     })
     .catch(err => {

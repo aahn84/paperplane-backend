@@ -58,7 +58,6 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
         arrive_estimatedTime: foundDeparture.arrival.estimatedTime,
         arrive_status: foundDeparture.delay,
       }
-      console.log('FLIGHT!', flight)
       return knex('flights')
         .insert(flight)
         .returning('*')
@@ -88,14 +87,12 @@ function getAirlineByName(airline_name)  {
 }
 
 function deleteFlight(flights_id, trips_id) {
-  console.log(flights_id, trips_id);
   return knex('flights')
   .del()
-  .where({
-    id: flights_id
-  })
-  // .where('flights_id', flights_id)
-  // .where('trips_id', trips_id)
+  .where('id', flights_id)
+  // .where({
+  //   id: flights_id
+  // })
   .returning('*')
 }
 

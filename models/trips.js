@@ -14,9 +14,9 @@ function createTrip(user_id, title, notes) {
     .returning('*')
 }
 
-function updateTrip(id, title, notes) {
+function updateTrip(id, updateObject) {
   return knex('trips')
-    .update({title, notes})
+    .update(updateObject)
     .where('id', id)
     .returning('*')
 }

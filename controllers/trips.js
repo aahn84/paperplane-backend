@@ -43,8 +43,8 @@ function createTrip(req, res, next) {
 
 function updateTrip(req, res, next) {
   const id = req.params.id;
-  const { title, notes } = req.body;
-  return model.trips.updateTrip(id, title, notes)
+  // const { title, notes } = req.body;
+  return model.trips.updateTrip(id, req.body)
     .then(trip => {
       return res.status(201).json({ data: trip });
     })
