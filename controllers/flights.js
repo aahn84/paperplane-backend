@@ -21,9 +21,9 @@ function getFlightById(req, res, next) {
 }
 
 function getFlightInfo(req, res, next) {
-  const id = req.params.id;
+  const trip_id = req.params.id;
   const { airline_name, flight_num, depart_date } = req.body;
-  return model.flights.getFlightInfo(airline_name, flight_num, depart_date, id)
+  return model.flights.getFlightInfo(airline_name, flight_num, depart_date, trip_id)
     .then(flight => {
       return res.status(200).json({ data: flight });
     })
@@ -33,8 +33,22 @@ function getFlightInfo(req, res, next) {
   })
 }
 
+function deleteFlight(req, res, next) {
+  const flights_id = req.params.id
+  const trips_id = req.body
+  return model.flights.deleteFlight(flights_id, trips_id)
+    .then(flight => {
+      return res.status(200).json({ data: flight });
+    })
+    .catch(err => {
+      console.log(err);
+    return next({ status: 404, message: `Error deleting flight.` });
+  })
+}
+
 module.exports = {
   getAllFlights,
   getFlightById,
   getFlightInfo,
+  deleteFlight,
 };

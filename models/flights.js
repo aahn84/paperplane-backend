@@ -33,13 +33,14 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
       const foundDeparture = departures.data.find(d => {
         return d.flight.number == flight_num
       })
-      console.log(foundDeparture);
+      // console.log(foundDeparture);
       const flight = {
         airline_callsign: airline.callsign,
         airline_iata: airline.codeIataAirline,
         flight_num,
         depart_airport: foundDeparture.departure.iataCode,
         depart_date,
+        depart_time: route.departureTime,
         // depart_gmt:
         depart_terminal: foundDeparture.departure.terminal,
         depart_gate: foundDeparture.departure.gate,
@@ -48,6 +49,7 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
         depart_status: foundDeparture.status,
         arrive_airport: foundDeparture.arrival.iataCode,
         // arrive_date:
+        arrive_time: route.arrivalTime,
         // arrive_gmt:
         arrive_terminal: foundDeparture.arrival.terminal,
         arrive_gate: foundDeparture.arrival.gate,
@@ -56,14 +58,14 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
         arrive_estimatedTime: foundDeparture.arrival.estimatedTime,
         arrive_status: foundDeparture.delay,
       }
-
+      console.log('FLIGHT!', flight)
       return knex('flights')
         .insert(flight)
         .returning('*')
 
     })
     .then(insertedFlight => {
-      console.log('Insert trip_flight', insertedFlight);
+      // console.log('Insert trip_flight', insertedFlight);
       return knex('trips_flights')
         .insert({
           trips_id: trip_id,
@@ -85,10 +87,21 @@ function getAirlineByName(airline_name)  {
     .catch(console.error)
 }
 
+function deleteFlight(flights_id, trips_id) {
+  console.log(flights_id, trips_id);
+  return knex('flights')
+  .del()
+  .where({
+    id: flights_id
+  })
+  // .where('flights_id', flights_id)
+  // .where('trips_id', trips_id)
+  .returning('*')
+}
+
 module.exports = {
-  // signup,
-  // login,
   getAllFlights,
   getFlightById,
   getFlightInfo,
+  deleteFlight,
 };

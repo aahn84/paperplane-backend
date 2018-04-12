@@ -32,9 +32,23 @@ function getTripsByUserId(id) {
       return Promise.all(promises)
         .then(trips => {
           return trips.sort((tripA, tripB) => {
+            if (tripA.flights.length === 0 && tripB.flights.length === 0) {
+              return true
+            }
+
+            if (tripA.flights.length === 0) {
+              return false
+            }
+
+            if (tripB.flights.length === 0) {
+              return true
+            }
+
             return tripA.flights[0].depart_scheduledTime < tripB.flights[0].depart_scheduledTime
           })
         })
+        .catch(err => { console.error('Big errror', err) })
+
     })
 }
 

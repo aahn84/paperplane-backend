@@ -16,13 +16,13 @@ module.exports=[
   },
   {
     user_id: 2,
-    title: "Trip",
+    title: "Sun & Sand",
     notes: "Find Airbnb!",
   },
   {
     user_id: 3,
-    title: "My Trip",
-    notes: null,
+    title: "Mission: Find Santa",
+    notes: "Meet Buddy the Elf @ North Pole.",
   },
   {
     user_id: 4,
@@ -31,7 +31,7 @@ module.exports=[
   },
   {
     user_id: 5,
-    title: "My Trip",
+    title: "Cali - Hawaii",
     notes: "Look up dog parks.",
   },
   {
