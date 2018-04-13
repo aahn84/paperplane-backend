@@ -11,9 +11,9 @@ module.exports = [
     depart_gate: "4",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-09T06:00:00.000",
-    depart_estimatedTime: "2018-04-09T05:48:00.000",
-    depart_actualTime: "2018-04-09T05:48:00.000",
+    depart_scheduledTime: "2018-05-04T06:00:00.000",
+    depart_estimatedTime: "2018-05-04T05:48:00.000",
+    depart_actualTime: "2018-05-04T05:48:00.000",
     depart_status: "landed",
     arrive_airport: "SNA",
     arrive_date: "2018-05-04",
@@ -23,9 +23,9 @@ module.exports = [
     arrive_gate: "11",
     baggage_claim: "3",
     // arrive_weather:
-    arrive_scheduledTime: "2018-04-09T08:38:00.000",
-    arrive_estimatedTime: "2018-04-09T08:28:00.000",
-    arrive_actualTime: "2018-04-09T08:28:00.000",
+    arrive_scheduledTime: "2018-05-04T08:38:00.000",
+    arrive_estimatedTime: "2018-05-04T08:28:00.000",
+    arrive_actualTime: "2018-05-04T08:28:00.000",
     arrive_status: "landed",
     // sched_duration:
     aircraft_info: "Boeing 767 381F",
@@ -44,7 +44,7 @@ module.exports = [
     depart_gate: "4",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-09T06:00:00.000",
+    depart_scheduledTime: "2018-04-13T18:30:00.000",
     depart_estimatedTime: "2018-04-09T05:48:00.000",
     depart_actualTime: "2018-04-09T05:48:00.000",
     depart_status: "landed",
@@ -77,7 +77,7 @@ module.exports = [
     depart_gate: "9",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-09T10:15:00.000",
+    depart_scheduledTime: "2018-04-13T18:00:00.000",
     depart_estimatedTime: "2018-04-09T10:15:00.000",
     depart_actualTime: "2018-04-09T10:37:00.000",
     depart_status: "landed",
