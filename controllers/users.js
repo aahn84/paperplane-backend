@@ -72,8 +72,9 @@ function createUser(req, res, next) {
 }
 
 function updateUserById(req, res, next) {
-  const { user_id, first_name, last_name, email, password, notifications_on } = req.body
-  return model.users.getUserById(user_id, first_name, last_name, email, password, notifications_on)
+  const id = req.params.id;
+  // const { user_id, first_name, last_name, email, password, notifications_on } = req.body
+  return model.users.getUserById(id, req.body)
     .then(user => {
       return res.status(201).json({ data: user });
     })

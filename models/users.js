@@ -58,10 +58,10 @@ function createUser(first_name, last_name, email, password) {
     .returning('*')
 }
 
-function updateUserById(user_id, first_name, last_name, email, password, notifications_on) {
+function updateUserById(id, userInfo) {
   return knex('users')
-    .update({user_id, first_name, last_name, email, password, notifications_on})
-    .where('id', user_id)
+    .update(userInfo)
+    .where('id', id)
     .returning('*')
 }
 
