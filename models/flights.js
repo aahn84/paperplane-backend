@@ -17,7 +17,6 @@ function getFlightById(id) {
 function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
   let airline;
   let route;
-
   return getAirlineByName(airline_name)
     .then(airlineResult => {
       airline = airlineResult
@@ -61,7 +60,6 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
       return knex('flights')
         .insert(flight)
         .returning('*')
-
     })
     .then(insertedFlight => {
       // console.log('Insert trip_flight', insertedFlight);
@@ -83,16 +81,15 @@ function getAirlineByName(airline_name)  {
 
       return match
     })
-    .catch(console.error)
+    .catch(err => {
+      console.log(err);
+    })
 }
 
 function deleteFlight(flights_id, trips_id) {
   return knex('flights')
   .del()
   .where('id', flights_id)
-  // .where({
-  //   id: flights_id
-  // })
   .returning('*')
 }
 

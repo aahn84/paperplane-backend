@@ -28,7 +28,6 @@ function getFlightInfo(req, res, next) {
       return res.status(200).json({ data: flight });
     })
     .catch(err => {
-      console.log(err);
       return next({ status: 404, message: `Flight not found` });
   })
 }
