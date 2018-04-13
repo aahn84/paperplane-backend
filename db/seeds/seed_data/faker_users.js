@@ -13,6 +13,7 @@ while (users.length<30) {
   user.last_name = faker.name.lastName();
   user.email = faker.internet.email();
   user.password = password;
+  user.phone = 2062907545;
   user.notifications_on = false;
 
   users.push(user);
