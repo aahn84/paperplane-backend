@@ -73,14 +73,13 @@ function createUser(req, res, next) {
 
 function updateUserById(req, res, next) {
   const id = req.params.id;
-  // const { user_id, first_name, last_name, email, password, notifications_on } = req.body
-  return model.users.getUserById(id, req.body)
+  return model.users.updateUserById(id, req.body)
     .then(user => {
       return res.status(201).json({ data: user });
     })
     .catch(err => {
-    return next({ status: 404, message: `User not found` });
-  })
+      return next({ status: 404, message: `Error creating user.` });
+    })
 }
 
 module.exports = {

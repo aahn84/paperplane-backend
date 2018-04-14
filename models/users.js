@@ -47,7 +47,9 @@ function getTripsByUserId(id) {
             return tripA.flights[0].depart_scheduledTime < tripB.flights[0].depart_scheduledTime
           })
         })
-        .catch(err => { console.error('Big errror', err) })
+        .catch(err => {
+          console.log(err)
+        })
 
     })
 }
@@ -58,11 +60,14 @@ function createUser(first_name, last_name, email, password) {
     .returning('*')
 }
 
-function updateUserById(id, userInfo) {
+function updateUserById(id, updateObject) {
   return knex('users')
-    .update(userInfo)
+    .update(updateObject)
     .where('id', id)
     .returning('*')
+    .then(res => {
+      return res
+    })
 }
 
 // function signup(user) {

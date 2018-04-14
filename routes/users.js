@@ -12,6 +12,6 @@ router.post('/', controller.users.createUser);
 // router.post('/', controller.users.login);
 // router.post('/signup', controller.users.signup);
 
-router.put('/:id', controller.users.updateUserById);
+router.patch('/:id', controller.users.updateUserById);
 
 module.exports = router;
