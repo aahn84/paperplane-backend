@@ -6,7 +6,8 @@ function getUpcomingFlights() {
   let later = new Date()
   later.setMinutes(9000);
 
-  console.log('now', isoDate.toISOString());
+  console.log('now', now, now.getTimezoneOffset());
+  console.log('corrected', isoDate.toISOString());
 
   return knex('flights')
     .where('depart_scheduledTime', '>', isoDate.toISOString())
@@ -27,7 +28,7 @@ function getUpcomingFlights() {
       return Promise.all(promises)
     })
     .then(trips => {
-      console.log(trips);
+      console.log('trips', trips);
       knex.destroy()
     })
     .catch(err => {
