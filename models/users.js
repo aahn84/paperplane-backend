@@ -129,6 +129,6 @@ module.exports = {
   getAllUsers,
   getUserById,
   getTripsByUserId,
-  createUser,
+  // createUser,
   updateUserById,
 };

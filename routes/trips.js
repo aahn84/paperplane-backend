@@ -1,13 +1,14 @@
 const express = require('express');
 const controller = require('../controllers');
+const authorize = require('./authMiddleware');
 
 const router = express.Router();
 
 router.get('/', controller.trips.getAllTrips);
 // router.get('/:id', controller.trips.getTripByTripId);
 // router.get('/:id', controller.trips.getTripsByUserId);
-router.post('/', controller.trips.createTrip);
-router.patch('/:id', controller.trips.updateTrip);
-router.delete('/:id', controller.trips.deleteTrip);
+router.post('/', authorize, controller.trips.createTrip);
+router.patch('/:id', authorize, controller.trips.updateTrip);
+router.delete('/:id', authorize, controller.trips.deleteTrip);
 
 module.exports = router;
