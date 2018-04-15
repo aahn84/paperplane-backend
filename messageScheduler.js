@@ -2,7 +2,8 @@ const knex = require('./db/knex');
 
 function getUpcomingFlights() {
   let now = new Date();
-  let isoDate = new Date(now.getTime() - (now.getTimezoneOffset() * 60000))
+  const timeZoneOffset = 420 //set to PST offset in minutes aka now.getTimezoneOffset()
+  let isoDate = new Date(now.getTime() - (timeZoneOffset * 60000))
   let later = new Date()
   later.setMinutes(9000);
 
