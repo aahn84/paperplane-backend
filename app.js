@@ -18,7 +18,7 @@ app.use(bodyParser.json())
 const routes = require('./routes');
 
 
-// app.use('/auth', routes.auth);
+app.use('/auth', routes.auth);
 app.use('/api/users', routes.users);
 app.use('/api/flights', routes.flights);
 app.use('/api/trips', routes.trips);
