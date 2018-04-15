@@ -9,38 +9,45 @@ function getUpcomingFlights() {
   let later = new Date()
   later.setMinutes(9000);
 
-  console.log('now', now, now.getTimezoneOffset());
-  console.log('corrected', isoDate.toISOString());
+  // console.log('now', now, now.getTimezoneOffset());
+  // console.log('corrected', isoDate.toISOString());
 
   return knex('flights')
     .where('depart_scheduledTime', '>', isoDate.toISOString())
     .andWhere('depart_scheduledTime', '<', later.toISOString())
     .then(flights => {
-      console.log('flights', flights);
+      // console.log('flights', flights);
       const promises = flights.map(f => {
-        console.log(f.depart_scheduledTime, f.id)
+        // console.log(f.depart_scheduledTime, f.id)
         return knex('trips')
           .join('trips_flights', 'trips_flights.trips_id', 'trips.id')
           .join('users', 'users.id', 'trips.user_id')
           .where('trips_flights.flights_id', f.id)
           .then(trip => {
-            trip.flights = f
+            trip.flights = f;
             return trip
           })
       })
       return Promise.all(promises)
     })
     .then(trips => {
-      console.log('trips', trips);
-      sendText()
-      knex.destroy()
+      const tripMessages = trips.map(trip => {
+        const tripMessage = {};
+        tripMessage.phone = trip[0].phone;
+        tripMessage.message = `Your flight ${trip.flights.airline_iata}${trip.flights.flight_num} is departing from ${trip.flights.depart_airport} - Terminal: ${trip.flights.depart_terminal}, Gate: ${trip.flights.depart_gate} soon!`;
+        return tripMessage;
+      });
+
+      tripMessages.forEach(tripMessage => {
+        sendText(tripMessage.phone, tripMessage.message);
+      });
     })
     .catch(err => {
       console.log(err);
     })
 }
 
-function sendText() {
+function sendText(user_phone, user_message) {
   const accountSid = 'ACffbc19155450aa83dd788cb0a11c3cf5';
   const authToken = process.env.TWILIO_AUTH_TOKEN;
 
@@ -49,12 +56,13 @@ function sendText() {
 
   client.messages.create(
     {
-      to: '+12062907545',
-      from: '+12062907545',
-      body: 'PAPERPLANE: Your flight is coming up!',
+      to: `+1${user_phone}`,
+      from: '+12536566852',
+      body: `PAPERPLANE: ${user_message}`,
     },
     (err, message) => {
-      console.log(message);
+      if(err) console.error(err);
+      else console.log(message);
     }
   );
 }
