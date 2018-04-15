@@ -6,13 +6,13 @@ function getUpcomingFlights() {
   let later = new Date()
   later.setMinutes(9000);
 
-  // console.log('now', isoDate.toISOString());
+  console.log('now', isoDate.toISOString());
 
   return knex('flights')
     .where('depart_scheduledTime', '>', isoDate.toISOString())
     .andWhere('depart_scheduledTime', '<', later.toISOString())
     .then(flights => {
-      // console.log(flights);
+      console.log('flights', flights);
       const promises = flights.map(f => {
         console.log(f.depart_scheduledTime, f.id)
         return knex('trips')
