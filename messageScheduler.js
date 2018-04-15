@@ -1,4 +1,6 @@
 const knex = require('./db/knex');
+const twilio = require('twilio');
+require('dotenv').config();
 
 function getUpcomingFlights() {
   let now = new Date();
@@ -30,11 +32,31 @@ function getUpcomingFlights() {
     })
     .then(trips => {
       console.log('trips', trips);
+      sendText()
       knex.destroy()
     })
     .catch(err => {
       console.log(err);
     })
+}
+
+function sendText() {
+  const accountSid = 'ACffbc19155450aa83dd788cb0a11c3cf5';
+  const authToken = process.env.TWILIO_AUTH_TOKEN;
+
+  // require the Twilio module and create a REST client
+  const client = require('twilio')(accountSid, authToken);
+
+  client.messages.create(
+    {
+      to: '+12062907545',
+      from: '+12062907545',
+      body: 'PAPERPLANE: Your flight is coming up!',
+    },
+    (err, message) => {
+      console.log(message.sid);
+    }
+  );
 }
 
 getUpcomingFlights();
