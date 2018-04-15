@@ -54,7 +54,7 @@ function sendText() {
       body: 'PAPERPLANE: Your flight is coming up!',
     },
     (err, message) => {
-      console.log(message.sid);
+      console.log(message);
     }
   );
 }
