@@ -19,8 +19,11 @@ function getUpcomingFlights() {
           .join('trips_flights', 'trips_flights.trips_id', 'trips.id')
           .join('users', 'users.id', 'trips.user_id')
           .where('trips_flights.flights_id', f.id)
+          .then(trip => {
+            trip.flights = f
+            return trip
+          })
       })
-
       return Promise.all(promises)
     })
     .then(trips => {

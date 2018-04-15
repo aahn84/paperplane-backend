@@ -44,7 +44,7 @@ module.exports = [
     depart_gate: "4",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-13T18:30:00.000",
+    depart_scheduledTime: "2018-04-15T13:50:00.000",
     depart_estimatedTime: "2018-04-09T05:48:00.000",
     depart_actualTime: "2018-04-09T05:48:00.000",
     depart_status: "landed",
