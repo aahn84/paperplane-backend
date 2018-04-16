@@ -37,7 +37,6 @@ function getUpcomingFlights() {
         tripMessage.message = `Your flight ${trip.flights.airline_iata}${trip.flights.flight_num} is departing from ${trip.flights.depart_airport} - Terminal: ${trip.flights.depart_terminal}, Gate: ${trip.flights.depart_gate} soon!`;
         return tripMessage;
       });
-
       tripMessages.forEach(tripMessage => {
         sendText(tripMessage.phone, tripMessage.message);
       });
@@ -63,6 +62,8 @@ function sendText(user_phone, user_message) {
     (err, message) => {
       if(err) console.error(err);
       else console.log(message);
+
+      // !!!!HOW DO I RESOLVE SO IT DOESN'T SEND EVERY 10 MINUTES???
     }
   );
 }
