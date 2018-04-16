@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config();
 
 app.disable('x-powered-by')
-app.use(cors())
+app.use(cors({ exposedHeaders: 'Auth' }))
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 // app.use(bodyParser.json({ limit: ‘50mb’ }));

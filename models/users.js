@@ -108,16 +108,13 @@ function login(email, password) {
   let validUser;
   return getUserByEmail(email)
     .then(user => {
-      // console.log('USER', user);
       if (!user) throw 'Please enter a valid email.';
       validUser = user;
       return bcrypt.compare(password, user.password);
     })
     .then(passwordIsValid => {
-      // console.log('PWDISVALID?', passwordIsValid);
       if (!passwordIsValid) throw 'Password invalid.';
       const claim = { user_id: validUser.id };
-      // console.log('CLAIM', claim);
       const fourWeeks = 2419200000;
       const token = jwt.sign(
         claim,
