@@ -1,6 +1,6 @@
 const knex = require('./db/knex');
 const twilio = require('twilio');
-const pify = require('pify')
+const { promisify } = require('util')
 require('dotenv').config();
 
 function getUpcomingFlights() {
@@ -10,17 +10,12 @@ function getUpcomingFlights() {
   let later = new Date()
   later.setMinutes(9000);
 
-  // console.log('now', now, now.getTimezoneOffset());
-  // console.log('corrected', isoDate.toISOString());
-
   return knex('flights')
     .where('depart_scheduledTime', '>', isoDate.toISOString())
     .andWhere('depart_scheduledTime', '<', later.toISOString())
-    .andWhere('bording_notification', false)
+    .andWhere('notification_sent', false)
     .then(flights => {
-      // console.log('flights', flights);
       const promises = flights.map(f => {
-        // console.log(f.depart_scheduledTime, f.id)
         return knex('trips')
           .join('trips_flights', 'trips_flights.trips_id', 'trips.id')
           .join('users', 'users.id', 'trips.user_id')
@@ -34,13 +29,7 @@ function getUpcomingFlights() {
       return Promise.all(promises)
     })
     .then(trips => {
-      console.log('TRIPS', trips);
-      // const tripMessages = trips.map(trip => {
-      //   const tripMessage = {};
-      //   tripMessage.phone = trip[0].phone;
-      //   tripMessage.message =
-      //   return tripMessage;
-      // });
+
       const messagePromises = trips.map(trip => {
         return sendText(trip);
       });
@@ -62,7 +51,7 @@ function sendText(trip) {
 
   // require the Twilio module and create a REST client
   const client = require('twilio')(accountSid, authToken);
-  const pCreate = pify(client.messages.create)
+  const pCreate = promisify(client.messages.create).bind(client.messages)
   return pCreate({
     to: `+1${user_phone}`,
     from: '+12536566852',
@@ -70,8 +59,8 @@ function sendText(trip) {
   })
   .then(res => {
     return knex('flights')
-      .update({ bording_notification: true })
-      .where('trip.flights.id', trip.flights.id)
+      .update({ notification_sent: true })
+      .where('id', trip.flights.id)
       .then(console.log)
       .catch(console.error)
   })
