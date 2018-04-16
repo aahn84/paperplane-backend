@@ -21,44 +21,44 @@ function getUserByEmail(email) {
     .first()
 }
 
-function getTripsByUserId(id) {
-  return knex('trips')
-    .where('user_id', id)
-    .then(trips => {
-      const promises = trips.map(trip => {
-        return knex('flights')
-          .join('trips_flights', 'trips_flights.flights_id', 'flights.id')
-          .where('trips_flights.trips_id', trip.id)
-          .orderBy('depart_scheduledTime', 'asc')
-          .then(flights => {
-            trip.flights = flights
-            return trip;
-          })
-      })
-      return Promise.all(promises)
-        .then(trips => {
-          return trips.sort((tripA, tripB) => {
-            if (tripA.flights.length === 0 && tripB.flights.length === 0) {
-              return true
-            }
-
-            if (tripA.flights.length === 0) {
-              return false
-            }
-
-            if (tripB.flights.length === 0) {
-              return true
-            }
-
-            return tripA.flights[0].depart_scheduledTime < tripB.flights[0].depart_scheduledTime
-          })
-        })
-        .catch(err => {
-          console.log(err)
-        })
-
-    })
-}
+// function getTripsByUserId(id) {
+//   return knex('trips')
+//     .where('user_id', id)
+//     .then(trips => {
+//       const promises = trips.map(trip => {
+//         return knex('flights')
+//           .join('trips_flights', 'trips_flights.flights_id', 'flights.id')
+//           .where('trips_flights.trips_id', trip.id)
+//           .orderBy('depart_scheduledTime', 'asc')
+//           .then(flights => {
+//             trip.flights = flights
+//             return trip;
+//           })
+//       })
+//       return Promise.all(promises)
+//         .then(trips => {
+//           return trips.sort((tripA, tripB) => {
+//             if (tripA.flights.length === 0 && tripB.flights.length === 0) {
+//               return true
+//             }
+//
+//             if (tripA.flights.length === 0) {
+//               return false
+//             }
+//
+//             if (tripB.flights.length === 0) {
+//               return true
+//             }
+//
+//             return tripA.flights[0].depart_scheduledTime < tripB.flights[0].depart_scheduledTime
+//           })
+//         })
+//         .catch(err => {
+//           console.log(err)
+//         })
+//
+//     })
+// }
 
 // function createUser(first_name, last_name, email, password) {
 //   return knex('users')
@@ -135,7 +135,7 @@ module.exports = {
   login,
   getAllUsers,
   getUserById,
-  getTripsByUserId,
+  // getTripsByUserId,
   // createUser,
   updateUserById,
 };

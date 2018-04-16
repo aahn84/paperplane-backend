@@ -94,7 +94,6 @@ module.exports = [
     arrive_scheduledTime: "2018-04-09T13:20:00.000",
     arrive_estimatedTime: "2018-04-09T13:20:00.000",
     arrive_actualTime: "2018-04-09T13:15:00.000",
-
     arrive_status: "landed",
     // sched_duration:
     aircraft_info: "Boeing 737NG 8CT/W",
@@ -299,7 +298,6 @@ module.exports = [
     arrive_scheduledTime: "2018-04-09T13:20:00.000",
     arrive_estimatedTime: "2018-04-09T13:20:00.000",
     arrive_actualTime: "2018-04-09T13:15:00.000",
-
     arrive_status: "landed",
     // sched_duration:
     aircraft_info: "Boeing 737NG 8CT/W",

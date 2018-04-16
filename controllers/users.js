@@ -3,7 +3,7 @@ const model = require('../models');
 function getAllUsers(req, res, next) {
   return model.users.getAllUsers()
     .then(users => {
-      return res.status(200).json({ data: users });
+      return res.status(200).json(users);
     })
     .catch(err => {
     return next({ status: 404, message: `Not found` });
@@ -22,15 +22,15 @@ function getUserById(req, res, next) {
   })
 }
 
-function getTripsByUserId(req, res, next) {
-  return model.users.getTripsByUserId(req.params.id)
-    .then(trips => {
-      return res.status(200).json({ data: trips });
-    })
-    .catch(err => {
-    return next({ status: 404, message: `Trips not found` });
-  })
-}
+// function getTripsByUserId(req, res, next) {
+//   return model.users.getTripsByUserId(req.params.id)
+//     .then(trips => {
+//       return res.status(200).json(trips);
+//     })
+//     .catch(err => {
+//     return next({ status: 404, message: `Trips not found` });
+//   })
+// }
 
 // function createUser(req, res, next) {
 //   const { first_name, last_name, email, password } = req.body;
@@ -47,7 +47,7 @@ function updateUserById(req, res, next) {
   const id = req.params.id;
   return model.users.updateUserById(id, req.body)
     .then(user => {
-      return res.status(201).json({ data: user });
+      return res.status(201).json(user);
     })
     .catch(err => {
       return next({ status: 404, message: `Error creating user.` });
@@ -59,7 +59,7 @@ module.exports = {
   // login,
   getAllUsers,
   getUserById,
-  getTripsByUserId,
+  // getTripsByUserId,
   // createUser,
   updateUserById,
 };

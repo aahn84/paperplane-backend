@@ -4,7 +4,8 @@ const authorize = require('./authMiddleware');
 
 const router = express.Router();
 
-router.get('/', controller.trips.getAllTrips);
+router.get('/', authorize, controller.trips.getTripsByUserId);
+// router.get('/', controller.trips.getAllTrips);
 // router.get('/:id', controller.trips.getTripByTripId);
 // router.get('/:id', controller.trips.getTripsByUserId);
 router.post('/', authorize, controller.trips.createTrip);
