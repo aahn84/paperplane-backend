@@ -11,10 +11,11 @@ function getAllUsers(req, res, next) {
 }
 
 function getUserById(req, res, next) {
-  // const id = req.body;
-  return model.users.getUserById(req.params.id)
+  const id = req.claim.user_id;
+  return model.users.getUserById(id)
     .then(user => {
-      return res.status(200).json({ data: user });
+      console.log(user);
+      return res.status(200).json(user);
     })
     .catch(err => {
     return next({ status: 404, message: `User not found` });

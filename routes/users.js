@@ -3,7 +3,8 @@ const controller = require('../controllers');
 const router = express.Router();
 const authorize = require('./authMiddleware');
 
-router.get('/', controller.users.getAllUsers);
+router.get('/', authorize, controller.users.getUserById);
+// router.get('/', controller.users.getAllUsers);
 router.get('/:id', authorize, controller.users.getUserById);
 router.get('/:id/trips', authorize, controller.users.getTripsByUserId);
 // router.get('/:id/trips/:tripId', authorize, controller.users.getTripsByTripId);

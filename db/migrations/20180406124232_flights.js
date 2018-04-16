@@ -28,6 +28,7 @@ exports.up = function(knex, Promise) {
     table.string('arrive_status')
     table.string('aircraft_info').defaultTo('Not Assigned');
     table.string('flight_status').notNullable().defaultTo('TBA');
+    table.boolean('bording_notification').defaultTo(false);
     table.string('updated').notNullable().defaultTo('TBA');
   })
 };

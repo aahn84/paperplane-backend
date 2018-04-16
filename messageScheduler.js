@@ -15,6 +15,7 @@ function getUpcomingFlights() {
   return knex('flights')
     .where('depart_scheduledTime', '>', isoDate.toISOString())
     .andWhere('depart_scheduledTime', '<', later.toISOString())
+    .andWhere('bording_notification', false)
     .then(flights => {
       // console.log('flights', flights);
       const promises = flights.map(f => {
@@ -31,14 +32,15 @@ function getUpcomingFlights() {
       return Promise.all(promises)
     })
     .then(trips => {
-      const tripMessages = trips.map(trip => {
-        const tripMessage = {};
-        tripMessage.phone = trip[0].phone;
-        tripMessage.message = `Your flight ${trip.flights.airline_iata}${trip.flights.flight_num} is departing from ${trip.flights.depart_airport} - Terminal: ${trip.flights.depart_terminal}, Gate: ${trip.flights.depart_gate} soon!`;
-        return tripMessage;
-      });
-      tripMessages.forEach(tripMessage => {
-        sendText(tripMessage.phone, tripMessage.message);
+      console.log('TRIPS', trips);
+      // const tripMessages = trips.map(trip => {
+      //   const tripMessage = {};
+      //   tripMessage.phone = trip[0].phone;
+      //   tripMessage.message =
+      //   return tripMessage;
+      // });
+      trips.forEach(trip => {
+        sendText(trip);
       });
     })
     .catch(err => {
@@ -46,9 +48,11 @@ function getUpcomingFlights() {
     })
 }
 
-function sendText(user_phone, user_message) {
+function sendText(trip) {
   const accountSid = 'ACffbc19155450aa83dd788cb0a11c3cf5';
   const authToken = process.env.TWILIO_AUTH_TOKEN;
+  const user_phone = trip[0].phone
+  const user_message = `Your flight ${trip.flights.airline_iata}${trip.flights.flight_num} is departing from ${trip.flights.depart_airport} - Terminal: ${trip.flights.depart_terminal}, Gate: ${trip.flights.depart_gate} soon!`;
 
   // require the Twilio module and create a REST client
   const client = require('twilio')(accountSid, authToken);
@@ -60,9 +64,9 @@ function sendText(user_phone, user_message) {
       body: `PAPERPLANE: ${user_message}`,
     },
     (err, message) => {
-      if(err) console.error(err);
-      else console.log(message);
-
+      if(err) return console.error(err);
+      console.log(message);
+      // update flight bording_notification to true
       // !!!!HOW DO I RESOLVE SO IT DOESN'T SEND EVERY 10 MINUTES???
     }
   );

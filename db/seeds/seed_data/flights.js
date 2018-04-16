@@ -44,7 +44,7 @@ module.exports = [
     depart_gate: "4",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-15T16:00:00.000",
+    depart_scheduledTime: "2018-04-16T11:40:00.000",
     depart_estimatedTime: "2018-04-09T05:48:00.000",
     depart_actualTime: "2018-04-09T05:48:00.000",
     depart_status: "landed",
@@ -63,6 +63,7 @@ module.exports = [
     // sched_duration:
     aircraft_info: "Boeing 767 381F",
     flight_status: "scheduled",
+    bording_notification: false,
     updated: 1523163923,
   },
   {
@@ -111,7 +112,7 @@ module.exports = [
     depart_gate: "2",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-15T16:00:00.000",
+    depart_scheduledTime: "2018-04-16T11:40:00.000",
     depart_estimatedTime: "2018-04-09T08:05:00.000",
     depart_actualTime: "2018-04-09T08:05:00.000",
     depart_status: "landed",
@@ -130,6 +131,7 @@ module.exports = [
     // sched_duration:
     aircraft_info: "2014 BOEING 737-990ER",
     flight_status: "scheduled",
+    bording_notification: false,
     updated: 1523163915,
   },
   {
