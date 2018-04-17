@@ -60,12 +60,6 @@ function getUserByEmail(email) {
 //     })
 // }
 
-// function createUser(first_name, last_name, email, password) {
-//   return knex('users')
-//     .insert({first_name, last_name, email, password})
-//     .returning('*')
-// }
-
 function updateUserById(id, updateObject) {
   return knex('users')
     .update(updateObject)
@@ -133,6 +127,5 @@ module.exports = {
   getAllUsers,
   getUserById,
   // getTripsByUserId,
-  // createUser,
   updateUserById,
 };

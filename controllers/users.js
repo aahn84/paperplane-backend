@@ -32,19 +32,8 @@ function getUserById(req, res, next) {
 //   })
 // }
 
-// function createUser(req, res, next) {
-//   const { first_name, last_name, email, password } = req.body;
-//   return model.users.createUser(user_id, title, notes)
-//     .then(user => {
-//       return res.status(201).json({ data: user });
-//     })
-//     .catch(err => {
-//     return next({ status: 404, message: `Error creating user.` });
-//   })
-// }
-
 function updateUserById(req, res, next) {
-  const id = req.params.id;
+  const id = req.claim.user_id;
   return model.users.updateUserById(id, req.body)
     .then(user => {
       return res.status(201).json(user);
@@ -55,11 +44,8 @@ function updateUserById(req, res, next) {
 }
 
 module.exports = {
-  // signup,
-  // login,
   getAllUsers,
   getUserById,
   // getTripsByUserId,
-  // createUser,
   updateUserById,
 };
