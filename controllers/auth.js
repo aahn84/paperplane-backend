@@ -2,6 +2,7 @@ const model = require('../models');
 
 function signup(req, res, next) {
   const { first_name, last_name, email, password } = req.body;
+  console.log('BODY', req.body);
   if (!first_name || !last_name || !email || !password) {
     return next({ status: 400, message: 'Missing fields.' });
   }
@@ -18,7 +19,7 @@ function signup(req, res, next) {
 
 function login(req, res, next) {
   const { email, password } = req.body;
-  console.log('BODY', req.body);
+  // console.log('BODY', req.body);
   if (!email || !password) {
     return next({ status: 400, message: 'Missing fields.' });
   }

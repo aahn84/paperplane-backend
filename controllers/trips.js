@@ -21,7 +21,7 @@ function getAllTrips(req, res, next) {
 // }
 
 function getTripsByUserId(req, res, next) {
-  console.log('CLAIM', req.claim);
+  // console.log('CLAIM', req.claim);
   return model.trips.getTripsByUserId(req.claim.user_id)
     .then(trips => {
       return res.status(200).json(trips);
@@ -32,7 +32,8 @@ function getTripsByUserId(req, res, next) {
 }
 
 function createTrip(req, res, next) {
-  const { user_id, title, notes } = req.body;
+  const user_id = req.claim;
+  const { title, notes } = req.body;
   return model.trips.createTrip(user_id, title, notes)
     .then(trip => {
       return res.status(201).json(trip);
