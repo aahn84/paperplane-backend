@@ -34,7 +34,7 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 
 ## Screenshots
 ### Login/Signup:
-![Login Image](screenshots/paperplane-login.png){:height="50%" width="50%"}
+![Login Image|512x397,50%](screenshots/paperplane-login.png)
 ![Signup Image](screenshots/paperplane-signup.png)
 
 ### My Trips:
