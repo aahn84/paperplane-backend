@@ -283,9 +283,9 @@ module.exports = [
     depart_gate: "9",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-09T10:15:00.000",
-    depart_estimatedTime: "2018-04-09T10:15:00.000",
-    depart_actualTime: "2018-04-09T10:37:00.000",
+    depart_scheduledTime: "2018-04-17T14:15:00.000",
+    depart_estimatedTime: "2018-04-17T14:15:00.000",
+    depart_actualTime: "2018-04-17T10:37:00.000",
     depart_status: "landed",
     arrive_airport: "OGG",
     arrive_date: "2018-05-11",
@@ -295,9 +295,9 @@ module.exports = [
     arrive_gate: "23",
     baggage_claim: "3",
     // arrive_weather:
-    arrive_scheduledTime: "2018-04-09T13:20:00.000",
-    arrive_estimatedTime: "2018-04-09T13:20:00.000",
-    arrive_actualTime: "2018-04-09T13:15:00.000",
+    arrive_scheduledTime: "2018-04-17T13:20:00.000",
+    arrive_estimatedTime: "2018-04-17T13:20:00.000",
+    arrive_actualTime: "2018-04-17T13:15:00.000",
     arrive_status: "landed",
     // sched_duration:
     aircraft_info: "Boeing 737NG 8CT/W",

@@ -5,7 +5,6 @@ function signup(req, res, next) {
   if (!first_name || !last_name || !email || !password) {
     return next({ status: 400, message: 'Missing fields.' });
   }
-  //return model.users.signup(first_name, last_name, email, password)
   return model.users.signup(req.body)
     .then(token => {
       return res.set('Auth', `Bearer: ${token}`)

@@ -1,6 +1,4 @@
 const knex = require('../db/knex');
-// const bcrypt = require('bcryptjs');
-// const jwt = require('jsonwebtoken');
 
 function getAllTrips() {
   return knex('trips')

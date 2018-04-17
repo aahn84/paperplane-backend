@@ -10,16 +10,6 @@ function getAllTrips(req, res, next) {
   })
 }
 
-// function getTripByTripId(req, res, next) {
-//   return model.trips.getTripById(req.params.id)
-//     .then(trip => {
-//       return res.status(200).json({ data: trip });
-//     })
-//     .catch(err => {
-//     return next({ status: 404, message: `Trip not found` });
-//   })
-// }
-
 function getTripsByUserId(req, res, next) {
   return model.trips.getTripsByUserId(req.claim.user_id)
     .then(trips => {
@@ -44,7 +34,6 @@ function createTrip(req, res, next) {
 
 function updateTrip(req, res, next) {
   const id = req.params.id;
-  // const user_id = req.claim.user_id;
   return model.trips.updateTrip(id, req.body)
     .then(trip => {
       return res.status(201).json(trip);
@@ -68,7 +57,6 @@ function deleteTrip(req, res, next) {
 
 module.exports = {
   getAllTrips,
-  // getTripByTripId,
   getTripsByUserId,
   createTrip,
   updateTrip,

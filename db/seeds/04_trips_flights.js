@@ -11,7 +11,6 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('trips_flights').insert([
         {trips_id: 1, flights_id: 1},
-        // {trips_id: 1, flights_id: 3},
         {trips_id: 2, flights_id: 4},
         {trips_id: 2, flights_id: 3},
         {trips_id: 3, flights_id: 4},

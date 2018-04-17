@@ -30,15 +30,9 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
       return axios.get(`${BASE_URL}/timetable?key=${process.env.API_KEY}&type=departure&iataCode=${route.departureIata}`)
     })
     .then(departures => {
-
       const foundDeparture = departures.data.find(d => {
         return d.flight.number == flight_num
       })
-      console.log(foundDeparture);
-      // debugger
-      // TODO: Code assumes flightDeparture is found
-      // doesn't handle the case of no flight for that number
-      // console.log(foundDeparture);
       const flight = {
         airline_callsign: airline.callsign,
         airline_iata: airline.codeIataAirline,
@@ -46,7 +40,6 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
         depart_airport: foundDeparture.departure.iataCode,
         depart_date,
         depart_time: route.departureTime,
-        // depart_gmt:
         depart_terminal: foundDeparture.departure.terminal,
         depart_gate: foundDeparture.departure.gate,
         depart_scheduledTime: foundDeparture.departure.scheduledTime,
@@ -55,7 +48,6 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
         arrive_airport: foundDeparture.arrival.iataCode,
         arrive_date: depart_date,
         arrive_time: route.arrivalTime,
-        // arrive_gmt:
         arrive_terminal: foundDeparture.arrival.terminal,
         arrive_gate: foundDeparture.arrival.gate,
         baggage_claim: foundDeparture.arrival.baggage,
@@ -68,7 +60,6 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
         .returning('*')
     })
     .then(insertedFlight => {
-      // console.log('Insert trip_flight', insertedFlight);
       return knex('trips_flights')
         .insert({
           trips_id: trip_id,
@@ -76,7 +67,6 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
         })
         .returning('*')
     })
-
 }
 
 function getAirlineByName(airline_name)  {

@@ -22,16 +22,6 @@ function getUserById(req, res, next) {
   })
 }
 
-// function getTripsByUserId(req, res, next) {
-//   return model.users.getTripsByUserId(req.params.id)
-//     .then(trips => {
-//       return res.status(200).json(trips);
-//     })
-//     .catch(err => {
-//     return next({ status: 404, message: `Trips not found` });
-//   })
-// }
-
 function updateUserById(req, res, next) {
   const id = req.claim.user_id;
   return model.users.updateUserById(id, req.body)
@@ -46,6 +36,5 @@ function updateUserById(req, res, next) {
 module.exports = {
   getAllUsers,
   getUserById,
-  // getTripsByUserId,
   updateUserById,
 };
