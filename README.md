@@ -12,7 +12,7 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 
 ## Features
 - Managed state through React Redux store
-- Leverage external APIs
+- Leverage external resources
 - Send and retrieve authenticated data from server using REST API
 
 ## Core Technologies
