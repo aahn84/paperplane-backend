@@ -21,7 +21,6 @@ function getFlightById(req, res, next) {
 }
 
 function getFlightInfo(req, res, next) {
-  // debugger
   const trip_id = req.params.id;
   const { airline_name, flight_num, depart_date } = req.body;
   return model.flights.getFlightInfo(airline_name, flight_num, depart_date, trip_id)
@@ -35,7 +34,6 @@ function getFlightInfo(req, res, next) {
 
 function deleteFlight(req, res, next) {
   const flights_id = req.params.id
-  // const trips_id = req.body
   return model.flights.deleteFlight(flights_id)
     .then(flight => {
       return res.status(200).json(flight);

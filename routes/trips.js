@@ -6,7 +6,6 @@ const router = express.Router();
 
 // router.get('/', controller.trips.getAllTrips);
 router.get('/', authorize, controller.trips.getTripsByUserId);
-// router.get('/:id', controller.trips.getTripsByUserId);
 router.post('/', authorize, controller.trips.createTrip);
 router.patch('/:id', authorize, controller.trips.updateTrip);
 router.delete('/:id', authorize, controller.trips.deleteTrip);

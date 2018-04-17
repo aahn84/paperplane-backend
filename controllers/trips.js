@@ -44,7 +44,7 @@ function createTrip(req, res, next) {
 
 function updateTrip(req, res, next) {
   const id = req.params.id;
-  // const { title, notes } = req.body;
+  // const user_id = req.claim.user_id;
   return model.trips.updateTrip(id, req.body)
     .then(trip => {
       return res.status(201).json(trip);
@@ -55,7 +55,6 @@ function updateTrip(req, res, next) {
 }
 
 function deleteTrip(req, res, next) {
-  // const user_id = req.claim.user_id;
   const trip_id = req.params.id
   return model.trips.deleteTrip(trip_id)
     .then(trip => {
