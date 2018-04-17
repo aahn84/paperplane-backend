@@ -35,8 +35,8 @@ function getFlightInfo(req, res, next) {
 
 function deleteFlight(req, res, next) {
   const flights_id = req.params.id
-  const trips_id = req.body
-  return model.flights.deleteFlight(flights_id, trips_id)
+  // const trips_id = req.body
+  return model.flights.deleteFlight(flights_id)
     .then(flight => {
       return res.status(200).json(flight);
     })

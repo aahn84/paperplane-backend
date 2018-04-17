@@ -89,7 +89,7 @@ function getAirlineByName(airline_name)  {
     })
 }
 
-function deleteFlight(flights_id, trips_id) {
+function deleteFlight(flights_id) {
   return knex('flights')
   .del()
   .where('id', flights_id)
