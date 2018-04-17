@@ -16,15 +16,10 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 - Send and retrieve authenticated data from server using REST API
 
 ## Core Technologies
-#### Frontend
 - React.js
 - React Redux
 - React Router
-- JSX
-- JavaScript
 - AJAX/axios
-
-#### Backend
 - PostgreSQL
 - Authentication
 - Knex.js
@@ -33,13 +28,13 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 - REST API
 - JavaScript
 
-#### External APIs/Services Used
+#### External Resources
 - Aviation-Edge API
 - Twilio
 
 ## Screenshots
 ### Login/Signup:
-![Login Image](screenshots/paperplane-login.png)
+![Login Image](screenshots/paperplane-login.png){:height="50%" width="50%"}
 ![Signup Image](screenshots/paperplane-signup.png)
 
 ### My Trips:
