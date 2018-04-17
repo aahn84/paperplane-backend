@@ -9,7 +9,7 @@ function getUpcomingFlights() {
   const timeZoneOffset = 420 //set to PST offset in minutes aka now.getTimezoneOffset()
   let isoDate = new Date(now.getTime() - (timeZoneOffset * 60000))
   let later = new Date()
-  later.setMinutes(9000);
+  later.setMinutes(90);
 
   return knex('flights')
     .where('depart_scheduledTime', '>', isoDate.toISOString())
@@ -17,20 +17,23 @@ function getUpcomingFlights() {
     .andWhere('notification_sent', false)
     .then(flights => {
       const promises = flights.map(f => {
+        console.log('Looking at flight', f);
         return knex('trips')
           .join('trips_flights', 'trips_flights.trips_id', 'trips.id')
           .join('users', 'users.id', 'trips.user_id')
           .where('trips_flights.flights_id', f.id)
           .first()
           .then(trip => {
+            console.log('HERE', trip);
             trip.flights = f;
             return trip
           })
+          .catch(console.log)
       })
       return Promise.all(promises)
     })
     .then(trips => {
-
+      console.log('GOT TRIPS?', trips);
       const messagePromises = trips.map(trip => {
         return sendText(trip);
       });
