@@ -14,7 +14,6 @@ function getUserById(req, res, next) {
   const id = req.claim.user_id;
   return model.users.getUserById(id)
     .then(user => {
-      console.log(user);
       return res.status(200).json(user);
     })
     .catch(err => {

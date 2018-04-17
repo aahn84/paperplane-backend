@@ -24,7 +24,6 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
     })
     .then(routeResult => {
       route = routeResult.data[0]
-      console.log(route);
       // const flight = airline.codeIataAirline + flight_num
       // return axios.get(`${BASE_URL}/flights?key=${process.env.API_KEY}&flight[iataNumber]=${flight}`)
       return axios.get(`${BASE_URL}/timetable?key=${process.env.API_KEY}&type=departure&iataCode=${route.departureIata}`)

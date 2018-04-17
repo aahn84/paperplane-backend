@@ -73,7 +73,6 @@ function login(email, password) {
         process.env.JWT_SECRET,
         { expiresIn: Date.now() + fourWeeks }
       )
-      console.log('RETURNEDTOKEN', token);
       return token;
     })
     .catch(err => {

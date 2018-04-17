@@ -17,14 +17,12 @@ function getUpcomingFlights() {
     .andWhere('notification_sent', false)
     .then(flights => {
       const promises = flights.map(f => {
-        console.log('Looking at flight', f);
         return knex('trips')
           .join('trips_flights', 'trips_flights.trips_id', 'trips.id')
           .join('users', 'users.id', 'trips.user_id')
           .where('trips_flights.flights_id', f.id)
           .first()
           .then(trip => {
-            console.log('HERE', trip);
             trip.flights = f;
             return trip
           })
@@ -33,7 +31,6 @@ function getUpcomingFlights() {
       return Promise.all(promises)
     })
     .then(trips => {
-      console.log('GOT TRIPS?', trips);
       const messagePromises = trips.map(trip => {
         return sendText(trip);
       });
