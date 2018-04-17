@@ -2,17 +2,17 @@ module.exports=[
   {
     user_id: 1,
     title: "Disneyland!",
-    notes: "The most magical place on earth.",
+    notes: "Confirmation #ABCEZ123. The most magical place on earth.",
   },
   {
     user_id: 1,
-    title: "Fun Times",
+    title: "Fun in the sun!",
     notes: "Find places to eat.",
   },
   {
     user_id: 2,
     title: "New Trip",
-    notes: null,
+    notes: "Confirmation #WUT4NG",
   },
   {
     user_id: 2,

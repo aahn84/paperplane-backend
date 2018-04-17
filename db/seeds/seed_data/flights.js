@@ -31,7 +31,7 @@ module.exports = [
     aircraft_info: "Boeing 767 381F",
     flight_status: "scheduled",
     notification_sent: false,
-    updated: 1523163923,
+    updated: 1524142800,
   },
   {
     airline_callsign: "ALASKA",
@@ -45,9 +45,9 @@ module.exports = [
     depart_gate: "4",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-16T12:50:00.000",
-    depart_estimatedTime: "2018-04-16T12:50:00.000",
-    depart_actualTime: "2018-04-16T12:50:00.000",
+    depart_scheduledTime: "2018-04-20T12:50:00.000",
+    depart_estimatedTime: "2018-04-20T12:50:00.000",
+    depart_actualTime: "2018-04-20T12:50:00.000",
     depart_status: "landed",
     arrive_airport: "SNA",
     arrive_date: "2018-05-04",
@@ -57,15 +57,15 @@ module.exports = [
     arrive_gate: "11",
     baggage_claim: "3",
     // arrive_weather:
-    arrive_scheduledTime: "2018-04-09T08:38:00.000",
-    arrive_estimatedTime: "2018-04-09T08:28:00.000",
-    arrive_actualTime: "2018-04-09T08:28:00.000",
+    arrive_scheduledTime: "2018-04-20T08:38:00.000",
+    arrive_estimatedTime: "2018-04-20T08:28:00.000",
+    arrive_actualTime: "2018-04-20T08:28:00.000",
     arrive_status: "landed",
     // sched_duration:
     aircraft_info: "Boeing 767 381F",
     flight_status: "scheduled",
     notification_sent: false,
-    updated: 1523163923,
+    updated: 1524142800,
   },
   {
     airline_callsign : "HAWAIIAN",
@@ -79,9 +79,9 @@ module.exports = [
     depart_gate: "9",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-13T18:00:00.000",
-    depart_estimatedTime: "2018-04-09T10:15:00.000",
-    depart_actualTime: "2018-04-09T10:37:00.000",
+    depart_scheduledTime: "2018-06-14T18:00:00.000",
+    depart_estimatedTime: "2018-06-14T10:15:00.000",
+    depart_actualTime: "2018-06-14T10:37:00.000",
     depart_status: "landed",
     arrive_airport: "OGG",
     arrive_date: "2018-05-11",
@@ -91,15 +91,15 @@ module.exports = [
     arrive_gate: "23",
     baggage_claim: "3",
     // arrive_weather:
-    arrive_scheduledTime: "2018-04-09T13:20:00.000",
-    arrive_estimatedTime: "2018-04-09T13:20:00.000",
-    arrive_actualTime: "2018-04-09T13:15:00.000",
+    arrive_scheduledTime: "2018-06-14T13:20:00.000",
+    arrive_estimatedTime: "2018-06-14T13:20:00.000",
+    arrive_actualTime: "2018-06-14T13:15:00.000",
     arrive_status: "landed",
     // sched_duration:
     aircraft_info: "Boeing 737NG 8CT/W",
     flight_status: "scheduled",
     notification_sent: false,
-    updated: 1523163915,
+    updated: 1524142800,
   },
   {
     airline_callsign: "ALASKA",
@@ -113,9 +113,9 @@ module.exports = [
     depart_gate: "2",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-16T12:50:00.000",
-    depart_estimatedTime: "2018-04-16T12:50:00.000",
-    depart_actualTime: "2018-04-16T12:50:00.000",
+    depart_scheduledTime: "2018-04-17T12:50:00.000",
+    depart_estimatedTime: "2018-04-17T12:50:00.000",
+    depart_actualTime: "2018-04-17T12:50:00.000",
     depart_status: "landed",
     arrive_airport: "ANC",
     arrive_date: "2018-04-27",
@@ -125,15 +125,15 @@ module.exports = [
     arrive_gate: "C1",
     baggage_claim: "2",
     // arrive_weather:
-    arrive_scheduledTime: "2018-04-09T10:49:00.000",
-    arrive_estimatedTime: "2018-04-09T10:51:00.000",
-    arrive_actualTime: "null",
+    arrive_scheduledTime: "2018-04-17T10:49:00.000",
+    arrive_estimatedTime: "2018-04-17T10:51:00.000",
+    arrive_actualTime: "2018-04-17T10:49:00.000",
     arrive_status: "landed",
     // sched_duration:
     aircraft_info: "2014 BOEING 737-990ER",
     flight_status: "scheduled",
     notification_sent: false,
-    updated: 1523163915,
+    updated: 1524142800,
   },
   {
     airline_callsign : "HAWAIIAN",
@@ -147,9 +147,9 @@ module.exports = [
     depart_gate: "9",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-09T10:15:00.000",
-    depart_estimatedTime: "2018-04-09T10:15:00.000",
-    depart_actualTime: "2018-04-09T10:37:00.000",
+    depart_scheduledTime: "2018-04-25T10:15:00.000",
+    depart_estimatedTime: "2018-04-25T10:15:00.000",
+    depart_actualTime: "2018-04-25T10:37:00.000",
     depart_status: "landed",
     arrive_airport: "OGG",
     arrive_date: "2018-05-11",
@@ -159,15 +159,15 @@ module.exports = [
     arrive_gate: "23",
     baggage_claim: "3",
     // arrive_weather:
-    arrive_scheduledTime: "2018-04-09T13:20:00.000",
-    arrive_estimatedTime: "2018-04-09T13:20:00.000",
-    arrive_actualTime: "2018-04-09T13:15:00.000",
+    arrive_scheduledTime: "2018-04-25T13:20:00.000",
+    arrive_estimatedTime: "2018-04-25T13:20:00.000",
+    arrive_actualTime: "2018-04-25T13:15:00.000",
     arrive_status: "landed",
     // sched_duration:
     aircraft_info: "Boeing 737NG 8CT/W",
     flight_status: "scheduled",
     notification_sent: false,
-    updated: 1523163915,
+    updated: 1524142800,
   },
   {
     airline_callsign: "ALASKA",
@@ -201,7 +201,7 @@ module.exports = [
     aircraft_info: "2014 BOEING 737-990ER",
     flight_status: "scheduled",
     notification_sent: false,
-    updated: 1523163915,
+    updated: 1524142800,
   },
   {
     airline_callsign: "ALASKA",
@@ -235,7 +235,7 @@ module.exports = [
     aircraft_info: "2014 BOEING 737-990ER",
     flight_status: "scheduled",
     notification_sent: false,
-    updated: 1523163915,
+    updated: 1524142800,
   },
   {
     airline_callsign: "ALASKA",

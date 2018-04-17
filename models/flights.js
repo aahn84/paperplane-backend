@@ -32,6 +32,9 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
       const foundDeparture = departures.data.find(d => {
         return d.flight.number == flight_num
       })
+      // debugger
+      // TODO: Code assumes flightDeparture is found
+      // doesn't handle the case of no flight for that number
       // console.log(foundDeparture);
       const flight = {
         airline_callsign: airline.callsign,

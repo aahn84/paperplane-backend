@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken');
 
 function authorize (req, res, next) {
+  // debugger
   const token = req.headers.token;
-  console.log('token?', token);
+  console.log('bakendtoken?', token);
   jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
     if (err) return next({ status: 401, message: `Unauthorized user.` });
     req.claim = payload;
