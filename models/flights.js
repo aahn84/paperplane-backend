@@ -24,14 +24,17 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
     })
     .then(routeResult => {
       route = routeResult.data[0]
+      console.log(route);
       // const flight = airline.codeIataAirline + flight_num
       // return axios.get(`${BASE_URL}/flights?key=${process.env.API_KEY}&flight[iataNumber]=${flight}`)
       return axios.get(`${BASE_URL}/timetable?key=${process.env.API_KEY}&type=departure&iataCode=${route.departureIata}`)
     })
     .then(departures => {
+
       const foundDeparture = departures.data.find(d => {
         return d.flight.number == flight_num
       })
+      console.log(foundDeparture);
       // debugger
       // TODO: Code assumes flightDeparture is found
       // doesn't handle the case of no flight for that number
@@ -50,7 +53,7 @@ function getFlightInfo(airline_name, flight_num, depart_date, trip_id) {
         depart_estimatedTime: foundDeparture.departure.estimatedTime,
         depart_status: foundDeparture.status,
         arrive_airport: foundDeparture.arrival.iataCode,
-        // arrive_date:
+        arrive_date: depart_date,
         arrive_time: route.arrivalTime,
         // arrive_gmt:
         arrive_terminal: foundDeparture.arrival.terminal,
