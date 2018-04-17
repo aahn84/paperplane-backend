@@ -37,11 +37,21 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 - Aviation-Edge
 
 ## Screenshots
+### Login/Signup:
+![Login Image](screenshots/paperplane-login.png)
+![Signup Image](screenshots/paperplane-signup.png)
+
 ### My Trips:
-![My Trips Image](screenshots/placeholder.png)
+![My Trips Image](screenshots/paperplane-mytrips.png)
+![Add Trip Image](screenshots/paperplane-addtrip.png)
 
 ### Flights:
-![Flights Image](screenshots/placeholder.png)
+![Flights Image](screenshots/paperplane-flights.png)
+![Add Flight Image](screenshots/paperplane-addflight.png)
 
 ### Flight Details:
 ![Flight Details Image](screenshots/placeholder.png)
+![Share Flight Image](screenshots/placeholder.png)
+
+### Flight Details:
+![My Account Image](screenshots/placeholder.png)
