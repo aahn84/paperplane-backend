@@ -76,20 +76,25 @@ function updateUserById(id, updateObject) {
     })
 }
 
+/*
 function signup(user) {
   let validUser;
+  debugger
   return getUserByEmail(user.email)
     .then(existingUser => {
+      debugger
       if (existingUser) throw 'User already exists';
       return bcrypt.hash(user.password, parseInt(process.env.WORK_FACTOR));
     })
     .then(hashedPassword => {
+      debugger
       user.password = hashedPassword;
       return knex('users')
         .insert(user)
         .returning('*')
     })
     .then(user => {
+      debugger
       const claim = { user_id: user[0].id };
       const fourWeeks = 2419200000;
       const token = jwt.sign(
@@ -100,6 +105,34 @@ function signup(user) {
       return token;
     })
     .catch(err => {
+      console.log(err);
+    })
+}*/
+function signup(user) {
+  debugger
+  let validUser;
+  return bcrypt.hash(user.password, parseInt(process.env.WORK_FACTOR))
+    .then(hashedPassword => {
+      debugger
+      user.password = hashedPassword;
+      return knex('users')
+        .insert(user)
+        .returning('*')
+    })
+    .then(user => {
+      debugger
+      const claim = { user_id: user[0].id };
+      const fourWeeks = 2419200000;
+      const token = jwt.sign(
+        claim,
+        process.env.JWT_SECRET,
+        { expiresIn: Date.now() + fourWeeks }
+      );
+      return token;
+    })
+    .catch(err => {
+      debugger
+      res.json({err: err})
       console.log(err);
     })
 }
