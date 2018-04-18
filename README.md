@@ -9,7 +9,8 @@ Paperplane is a mobile-first web app that allows users to track and receive SMS 
 
 
 ### YouTube Demo:
-[![Paperplane Demo](http://img.youtube.com/vi/q-ZrlGFFWjs/0.jpg)](http://www.youtube.com/watch?v=q-ZrlGFFWjs "Paperplane Demo")
+<!-- [![Paperplane Demo](http://img.youtube.com/vi/q-ZrlGFFWjs/0.jpg)](http://www.youtube.com/watch?v=q-ZrlGFFWjs "Paperplane Demo") -->
+[![Paperplane Demo](http://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-youtube-screenshot.png)](http://www.youtube.com/watch?v=q-ZrlGFFWjs "Paperplane Demo")
 
 ## Features
 - State management through React Redux store
