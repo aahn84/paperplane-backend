@@ -283,8 +283,8 @@ module.exports = [
     depart_gate: "9",
     // depart_weather:
     // depart_boardingTime:
-    depart_scheduledTime: "2018-04-17T16:40:00.000",
-    depart_estimatedTime: "2018-04-17T14:15:00.000",
+    depart_scheduledTime: "2018-04-17T17:45:00.000",
+    depart_estimatedTime: "2018-04-17T17:45:00.000",
     depart_actualTime: "2018-04-17T10:37:00.000",
     depart_status: "landed",
     arrive_airport: "OGG",
