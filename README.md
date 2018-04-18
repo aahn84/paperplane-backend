@@ -34,11 +34,12 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 
 ## Screenshots
 
-### Login/Signup:
+### Login/Signup/My Account:
 
 <!-- ![Login Image|512x397,50%](screenshots/paperplane-login.png) -->
 <!-- ![Signup Image](screenshots/paperplane-signup.png) -->
-<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-login.png" width="30%">     <img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-signup.png" width="30%">
+<!-- ![My Account Image](screenshots/placeholder.png) -->
+<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-login.png" width="30%">     <img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-signup.png" width="30%">      <img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-myaccount.png" width="30%">
 
 ### My Trips:
 
@@ -58,10 +59,6 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 <!-- ![Flight Details Image](screenshots/placeholder.png) -->
 <img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-flightdetails.png" width="30%">
 
-### My Account:
-
-<!-- ![My Account Image](screenshots/placeholder.png) -->
-<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-myaccount.png" width="30%">
 
 ## Setup
 1. Fork and clone this repository
