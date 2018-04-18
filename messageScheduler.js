@@ -9,7 +9,7 @@ function getUpcomingFlights() {
   const timeZoneOffset = 420 //set to PST offset in minutes aka now.getTimezoneOffset()
   let isoDate = new Date(now.getTime() - (timeZoneOffset * 60000))
   let later = new Date()
-  later.setMinutes(90);
+  later.setMinutes(120);
 
   return knex('flights')
     .where('depart_scheduledTime', '>', isoDate.toISOString())

@@ -2,7 +2,7 @@ module.exports=[
   {
     user_id: 1,
     title: "Disneyland!",
-    notes: "Confirmation #ABCEZ123. The most magical place on earth.",
+    notes: "The most magical place on earth :)",
   },
   {
     user_id: 1,
