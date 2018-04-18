@@ -56,13 +56,12 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 ### Flight Details:
 
 <!-- ![Flight Details Image](screenshots/placeholder.png) -->
-<!-- ![Share Flight Image](screenshots/placeholder.png) -->
-<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/placeholder" width="30%">      <img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/placeholder.png" width="30%">
+<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-flightdetails" width="30%">
 
-### Flight Details:
+### My Account:
 
 <!-- ![My Account Image](screenshots/placeholder.png) -->
-<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/placeholder.png" width="30%">
+<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-myaccount.png" width="30%">
 
 ## Setup
 1. Fork and clone this repository
