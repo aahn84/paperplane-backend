@@ -3,7 +3,7 @@
 Paperplane is a mobile-first web app that allows users to track and receive SMS notifications for upcoming flights. Users can create an account, add custom trips, and assign flights to individual trips.
 
 
-### Live URL: http://paperplane.surge.sh/
+### Live URL: https://paperplane.surge.sh/
 #### Frontend GitHub: https://github.com/aahn84/paperplane-frontend
 #### Backend GitHub: https://github.com/aahn84/paperplane-backend
 
@@ -20,14 +20,16 @@ Paperplane is a mobile-first web app that allows users to track and receive SMS 
 - React.js
 - React Redux
 - React Router
-- AJAX/axios
+- AJAX/Axios
 - PostgreSQL
-- Authentication
-- Knex.js
 - Node.js
 - Express.js
-- REST API
+- Knex.js
 - JavaScript
+- Heroku Scheduler
+- Authentication
+- REST API
+
 
 #### External Resources
 - Aviation-Edge API
@@ -60,6 +62,6 @@ Paperplane is a mobile-first web app that allows users to track and receive SMS 
 <img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-flightdetails.png" width="30%">
 
 
-## Setup
+## Installation
 1. Fork and clone this repository
 2. Run `npm install`
