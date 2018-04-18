@@ -56,7 +56,7 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 ### Flight Details:
 
 <!-- ![Flight Details Image](screenshots/placeholder.png) -->
-<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-flightdetails" width="30%">
+<img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-flightdetails.png" width="30%">
 
 ### My Account:
 
