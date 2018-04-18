@@ -3,7 +3,7 @@
 Paperplane is a mobile-first web app that allows users to track and receive SMS notifications for upcoming flights. Users can create an account, add custom trips, and assign flights to individual trips.
 
 
-### Live URL: http://placeholder.com
+### Live URL: http://paperplane.surge.sh/
 #### Frontend GitHub: https://github.com/aahn84/paperplane-frontend
 #### Backend GitHub: https://github.com/aahn84/paperplane-backend
 
