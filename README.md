@@ -8,7 +8,7 @@ Paperplane is a mobile-first web app that allows users to track and receive SMS 
 #### Backend GitHub: https://github.com/aahn84/paperplane-backend
 
 
-### YouTube Demo:
+### YouTube Demo: https://youtu.be/q-ZrlGFFWjs
 [![Paperplane Demo](http://img.youtube.com/vi/q-ZrlGFFWjs/0.jpg)](http://www.youtube.com/watch?v=q-ZrlGFFWjs "Paperplane Demo")
 
 
