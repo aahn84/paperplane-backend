@@ -1,6 +1,6 @@
 # Paperplane
 
-Paperplane is a mobile-first web app that allows users to track and receive notifications for upcoming flights. Users can create an account, add custom trips, and assign flights to individual trips. Users can also share flight details with friends or family via mobile SMS.
+Paperplane is a mobile-first web app that allows users to track and receive SMS notifications for upcoming flights. Users can create an account, add custom trips, and assign flights to individual trips.
 
 
 ### Live URL: http://placeholder.com
@@ -52,7 +52,6 @@ Paperplane is a mobile-first web app that allows users to track and receive noti
 <!-- ![Flights Image](screenshots/paperplane-flights.png) -->
 <!-- ![Add Flight Image](screenshots/paperplane-addflight.png) -->
 <img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-flights.png" width="30%">    <img src="https://github.com/aahn84/paperplane-backend/blob/master/screenshots/paperplane-addflight.png" width="30%">
-
 
 ### Flight Details:
 
