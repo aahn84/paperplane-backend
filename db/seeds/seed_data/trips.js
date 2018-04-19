@@ -7,7 +7,7 @@ module.exports=[
   {
     user_id: 1,
     title: "Fun in the sun!",
-    notes: "Find places to eat.",
+    notes: "Pack swimsuit.",
   },
   {
     user_id: 2,
