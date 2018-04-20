@@ -2,6 +2,8 @@
 
 Paperplane is a mobile-first web app that allows users to track and receive SMS notifications for upcoming flights. Users can create an account, add custom trips, and assign flights to individual trips.
 
+Planned and built by Angela Ahn in 2 weeks.
+
 
 ### Live URL: https://paperplane.surge.sh/
 #### Frontend GitHub: https://github.com/aahn84/paperplane-frontend
