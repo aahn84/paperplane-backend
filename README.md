@@ -4,7 +4,7 @@ Paperplane is a mobile-first web app that allows users to track and receive SMS 
 
 Planned and built within two weeks by Angela Ahn.
 
-###### _***NOTE: As of June 2, 2018, access to the Aviation-Edge API will be discontinued. After this date, please refer to the demo video linked below.***_
+###### _***NOTE: As of June 2, 2018, access to the Aviation-Edge API will be discontinued. Please refer to the demo video linked below.***_
 
 
 ### Live URL: https://paperplane.surge.sh/
