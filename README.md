@@ -1,6 +1,6 @@
 # Paperplane
 
-###### **NOTE: As of June 2, 2018, access to the Aviation-Edge API will be discontinued. Please refer to the demo video linked below.**
+###### _NOTE: As of June 2, 2018, access to the Aviation-Edge API will be discontinued. Please refer to the demo video linked below._
 
 Paperplane is a mobile-first web app that allows users to track and receive SMS notifications for upcoming flights. Users can create an account, add custom trips, and assign flights to individual trips.
 
